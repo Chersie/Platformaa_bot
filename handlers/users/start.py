@@ -3,7 +3,16 @@ from aiogram.dispatcher.filters.builtin import CommandStart
 
 from loader import dp
 
+from keyboards.default.start.start_menu_keyboard import start_menu_keyboard
+from keyboards.inline.profile_settings.profile_settings import change_personal_info_keyboard
+
 
 @dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
-    await message.answer(f"Привет, {message.from_user.full_name}!")
+    await message.answer(text="Ты успешно присоединился к нам!\n"
+                              "Добро пожаловать в семью Platforma.\n",
+                         reply_markup=start_menu_keyboard)
+    await message.answer(text="Для улучшения персонализации и для создания более эффективных заданий, "
+                              "тебе нужно указать несколько вещей.",
+                         reply_markup=change_personal_info_keyboard)
+
