@@ -28,16 +28,17 @@ get_location_keyboard = ReplyKeyboardMarkup(
         [
             KeyboardButton(text="Отправить геопозицию", request_location=True)
         ]
-    ]
+    ],
+    one_time_keyboard=True,
 )
 
 has_earning_keyboard = InlineKeyboardMarkup(
     inline_keyboard=[
         [
             KeyboardButton(text="Да, я зарабатываю сам и лично распоряжаюсь своими финансами",
-                           callback_data=earning_callback_data.new(has_earning=True)),
+                           callback_data=earning_callback_data.new(has_earning=1)),
             KeyboardButton(text="Нет, живу на средства родителей",
-                           callback_data=earning_callback_data.new(has_earning=False)),
+                           callback_data=earning_callback_data.new(has_earning=0)),
         ],
     ]
 )
