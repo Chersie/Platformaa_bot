@@ -1,7 +1,8 @@
 from telegram import CallbackQuery
 
 from keyboards.inline.faq.callback_datas import read_faq_callback_data
-from keyboards.inline.faq.faq import faq_continue_keyboard, vk_registration_menu_without_faq_readed_keyboard, \
+from keyboards.inline.faq.keyboards import faq_continue_keyboard
+from keyboards.inline.vk_registration.keyboards import vk_registration_menu_without_faq_readed_keyboard, \
     vk_registration_menu
 from loader import dp
 

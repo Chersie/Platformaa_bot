@@ -4,7 +4,7 @@ from aiogram.dispatcher.filters.builtin import CommandStart
 from loader import dp
 
 from keyboards.default.start.start_menu_keyboard import start_menu_keyboard
-from keyboards.inline.profile_settings.profile_settings import change_personal_info_keyboard
+from keyboards.inline.profile_settings.keyboards import change_personal_info_keyboard
 
 
 @dp.message_handler(CommandStart())

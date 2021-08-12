@@ -6,9 +6,9 @@ from aiogram.utils.callback_data import CallbackData
 from telegram import CallbackQuery
 
 from keyboards.default.start.start_menu_keyboard import start_menu_keyboard
-from keyboards.inline.faq.faq import faq_start_keyboard
+from keyboards.inline.faq.keyboards import faq_start_keyboard
 from keyboards.inline.profile_settings.callback_datas import age_callback_data, earning_callback_data
-from keyboards.inline.profile_settings.profile_settings import select_age_keyboard, get_location_keyboard, \
+from keyboards.inline.profile_settings.keyboards import select_age_keyboard, get_location_keyboard, \
     has_earning_keyboard
 from loader import dp
 
