@@ -60,11 +60,12 @@ class DBCommands:
         await user.update(age=age, location=location, income=income)
 
     # commands
+    @property
     async def count_users(self):
         return await db.func.count(User.id).gino.scalar()
 
-    async def get_referrals(self, count):
+    async def get_referrals(self, count=-1):
         tg_id = types.User.get_current().id
         user = await self.get_user(tg_id)
         referrals = await user.query.where(User.referrer == user.id).gino.all()
-        return referrals
+        return referrals[:count]
